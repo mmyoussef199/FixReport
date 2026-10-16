@@ -56,11 +56,11 @@ Documentation, source code, testing information, and release notes will be added
 
 ## About the developer
 
-FixReport is an independently developed WordPress product by **Youssef**, drawing on extensive hands-on experience in WordPress development, site maintenance, hosting, troubleshooting, integrations, and client delivery.
+FixReport is an independently developed WordPress product by **Mohamed Youssef**, drawing on extensive hands-on experience in WordPress development, site maintenance, hosting, troubleshooting, integrations, and client delivery.
 
 The project reflects a practical focus: building tools that solve recurring problems encountered in real WordPress maintenance work.
 
-**Portfolio:** [code-admin.com](https://code-admin.com)
+**LinkedIn:** [Mohamed Youssef](https://www.linkedin.com/in/mohamed-youssef-7448306a/)
 
 ## Project updates
 

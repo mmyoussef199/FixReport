@@ -1,0 +1,34 @@
+/* Report Branding Defaults only; WordPress supplies the admin chrome. */
+.fixreport-branding { max-width: 1320px; color: #1d2327; }
+.fixreport-branding *, .fixreport-branding *::before, .fixreport-branding *::after { box-sizing: border-box; }
+.fixreport-branding .frbg-header { margin: 24px 0 28px; }
+.fixreport-branding .frbg-header h1 { margin: 0; padding: 0; font-size: 26px; line-height: 1.3; font-weight: 600; }
+.fixreport-branding .frbg-header p { margin: 5px 0 0; max-width: 780px; color: #646970; font-size: 14px; line-height: 1.5; }
+.fixreport-branding .frbg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.fixreport-branding .frbg-card { min-width: 0; padding: 22px 24px; border: 1px solid #dcdcde; border-radius: 4px; background: #fff; box-shadow: 0 1px 1px rgba(0, 0, 0, .04); }
+.fixreport-branding .frbg-card h2 { margin: 0 0 20px; padding: 0 0 14px; border-bottom: 1px solid #f0f0f1; font-size: 17px; line-height: 1.4; font-weight: 600; }
+.fixreport-branding .frbg-fields { display: grid; gap: 18px; }
+.fixreport-branding .frbg-field { min-width: 0; }
+.fixreport-branding .frbg-field label, .fixreport-branding .frbg-logo-controls label { display: block; margin-bottom: 7px; font-weight: 600; }
+.fixreport-branding .frbg-field input, .fixreport-branding .frbg-field textarea { display: block; width: 100%; max-width: 100%; margin: 0; }
+.fixreport-branding .frbg-field input { min-height: 36px; }
+.fixreport-branding .frbg-field textarea { min-height: 96px; resize: vertical; }
+.fixreport-branding .frbg-details { grid-column: 1 / -1; }
+.fixreport-branding .frbg-details .frbg-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.fixreport-branding .frbg-logo-preview { display: flex; align-items: center; justify-content: center; min-height: 170px; padding: 16px; border: 1px solid #dcdcde; border-radius: 4px; background: #f6f7f7; text-align: center; }
+.fixreport-branding .frbg-logo-preview img { display: block; max-width: 100%; max-height: 150px; width: auto; height: auto; object-fit: contain; }
+.fixreport-branding .frbg-logo-preview p { margin: 0; color: #646970; line-height: 1.5; }
+.fixreport-branding .frbg-logo-controls { margin: 18px 0 0; }
+.fixreport-branding .frbg-logo-controls .fixreport-logo-id { display: block; width: 120px; max-width: 100%; min-height: 36px; margin: 0; }
+.fixreport-branding .frbg-logo-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.wp-core-ui .fixreport-branding .frbg-logo-buttons .button { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; height: auto; padding: 6px 12px; line-height: 1.3; }
+.fixreport-branding .frbg-save { display: flex; justify-content: flex-end; margin-top: 24px; }
+.fixreport-branding .frbg-save .submit { margin: 0; padding: 0; }
+.wp-core-ui .fixreport-branding .frbg-save .button { min-height: 40px; height: auto; padding: 6px 22px; font-weight: 600; }
+.fixreport-branding input:focus-visible, .fixreport-branding textarea:focus-visible, .fixreport-branding button:focus-visible { outline: 2px solid #2271b1; outline-offset: 2px; }
+@media (max-width: 782px) {
+	.fixreport-branding .frbg-header { margin-top: 16px; }
+	.fixreport-branding .frbg-grid, .fixreport-branding .frbg-details .frbg-fields { grid-template-columns: minmax(0, 1fr); }
+	.fixreport-branding .frbg-card { padding: 18px; }
+	.fixreport-branding .frbg-details { grid-column: auto; }
+}

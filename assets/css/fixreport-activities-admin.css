@@ -1,0 +1,154 @@
+.fixreport-page-header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.fixreport-filters {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: end;
+	gap: 10px;
+	margin: 16px 0;
+	padding: 12px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+}
+
+.fixreport-filter-field label {
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 600;
+}
+
+.fixreport-activity-excerpt {
+	margin-top: 4px;
+	color: #646970;
+}
+
+.fixreport-activity-meta {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 12px;
+	max-width: 900px;
+	margin: 12px 0 20px;
+	padding: 12px;
+	background: #f6f7f7;
+	border-left: 4px solid #72aee6;
+}
+
+.fixreport-client-visible label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+@media screen and (max-width: 782px) {
+	.fixreport-filters,
+	.fixreport-page-header {
+		align-items: stretch;
+		flex-direction: column;
+	}
+}
+
+/* Phase 10 Activities workspace. Scoped to this plugin page only. */
+.fixreport-activities { max-width: 1600px; margin-inline-end: 20px; color: #1d2327; }
+.fixreport-activity-back { margin: 18px 0 0; }
+.fixreport-activities .fixreport-page-header { justify-content: space-between; margin: 20px 0 0; }
+.fixreport-activities .fixreport-page-header h1 { font-size: 28px; line-height: 1.3; font-weight: 650; }
+.fixreport-activities-workspace { font-size: 14px; line-height: 1.45; }
+.fixreport-activity-subtitle { margin: 0 0 24px; color: #50575e; }
+.fixreport-activity-overview { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #fff; border: 1px solid #dcdcde; border-radius: 6px; box-shadow: 0 1px 1px rgba(0,0,0,.04); margin: 0 0 24px; padding: 20px; }
+.fixreport-activity-overview > div { min-width: 0; padding: 0 20px; border-inline-end: 1px solid #dcdcde; }
+.fixreport-activity-overview > div:first-child { padding-inline-start: 0; }
+.fixreport-activity-overview > div:last-child { border: 0; padding-inline-end: 0; }
+.fixreport-activity-overview span { display: block; color: #50575e; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.fixreport-activity-overview strong { display: block; margin: 8px 0 2px; font-size: 21px; line-height: 1.2; overflow-wrap: anywhere; }
+.fixreport-activity-overview small { display: block; color: #646970; font-size: 12px; overflow-wrap: anywhere; }
+.fixreport-activity-filters { display: grid; grid-template-columns: minmax(240px, 2fr) repeat(3, minmax(150px, 1fr)); align-items: end; gap: 14px 12px; padding: 18px 20px; margin-bottom: 18px; background: #fff; border: 1px solid #dcdcde; border-radius: 6px; }
+.fixreport-activity-filters label { display: grid; gap: 6px; min-width: 0; }
+.fixreport-filter-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; min-height: 36px; }
+.fixreport-activity-filters label span, .fixreport-add-panel label span { font-size: 12px; font-weight: 600; color: #50575e; }
+.fixreport-activity-filters input, .fixreport-activity-filters select { box-sizing: border-box; width: 100%; min-height: 36px; max-width: none; }
+.fixreport-activity-filters .button { min-height: 36px; }
+.fixreport-activity-filters a { padding: 7px 5px; }
+.fixreport-activity-table-card { overflow: hidden; background: #fff; border: 1px solid #dcdcde; border-radius: 6px; }
+.fixreport-activity-result-count { padding: 12px 20px; color: #50575e; border-bottom: 1px solid #dcdcde; }
+.fixreport-activity-table-scroll { overflow-x: auto; }
+.fixreport-activity-table { border: 0; min-width: 850px; table-layout: auto; }
+.fixreport-activity-table th { background: #f6f7f7; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; color: #50575e; }
+.fixreport-activity-table th, .fixreport-activity-table td { padding: 13px 14px; vertical-align: middle; border-bottom: 1px solid #eee; text-align: start; }
+.fixreport-activity-table th:first-child, .fixreport-activity-table td:first-child { width: 175px; }
+.fixreport-activity-table th:nth-child(2) { width: 42%; }
+.fixreport-activity-table th:nth-child(3), .fixreport-activity-table th:nth-child(4) { width: 125px; }
+.fixreport-activity-table th:last-child { width: 130px; }
+.fixreport-activity-table td { font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.fixreport-activity-table td strong { display: block; font-size: 14px; line-height: 1.4; font-weight: 650; }
+.fixreport-activity-table td small { display: block; margin-top: 3px; color: #50575e; font-size: 13px; line-height: 1.45; }
+.fixreport-category-badge, .fixreport-source-badge { display: inline-block; padding: 3px 8px; border-radius: 3px; background: #e8e8e8; color: #2c3338; font-size: 11px; font-weight: 600; }
+.fixreport-source-badge { border-radius: 99px; font-weight: 400; font-size: 12px; }
+.fixreport-source-badge.is-automatic { background: #e8f2fa; color: #135e96; }
+.fixreport-source-badge.is-manual { background: #e8e8e8; color: #2c3338; }
+.fixreport-activity-table .fixreport-inspect { color: #005a9c; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.fixreport-activity-table .fixreport-inspect:hover { color: #003c68; text-decoration: underline; }
+.fixreport-row-actions { display: flex; gap: 10px; align-items: center; margin-top: 5px; font-size: 12px; }
+.fixreport-row-actions form { display: inline; margin: 0; }
+.fixreport-activity-pagination { padding: 14px 20px; display: flex; gap: 6px; justify-content: flex-end; }
+.fixreport-activity-pagination .page-numbers { padding: 5px 9px; border: 1px solid #dcdcde; border-radius: 3px; text-decoration: none; }
+.fixreport-activity-pagination .current { background: #2271b1; color: #fff; border-color: #2271b1; }
+.fixreport-activity-empty { text-align: center; padding: 48px 20px; }
+.fixreport-activity-about { margin-top: 24px; padding: 16px 20px; background: #f0f0f1; border-radius: 4px; }
+.fixreport-activity-about p { margin: 5px 0 0; }
+.fixreport-dialog-open { overflow: hidden; }
+.fixreport-dialog-backdrop[hidden] { display: none; }
+.fixreport-dialog-backdrop { position: fixed; inset: 0; z-index: 100100; display: flex; align-items: center; justify-content: center; background: rgba(29,35,39,.55); }
+.fixreport-dialog-backdrop:has(.fixreport-inspection-panel) { justify-content: flex-end; }
+.fixreport-inspection-panel, .fixreport-add-panel { box-sizing: border-box; display: flex; flex-direction: column; min-height: 0; background: #fff; box-shadow: 0 4px 12px rgba(29,35,39,.2); }
+.fixreport-inspection-panel { width: min(480px, 100vw); height: 100%; }
+.fixreport-add-panel { width: min(640px, calc(100vw - 24px)); max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px); border-radius: 6px; }
+.fixreport-inspection-panel header, .fixreport-add-panel header { display: flex; flex: none; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 24px; border-bottom: 1px solid #dcdcde; }
+.fixreport-inspection-panel h2, .fixreport-add-panel h2 { margin: 0; font-size: 19px; line-height: 1.4; }
+.fixreport-inspection-panel header small { display: block; margin-top: 2px; color: #646970; }
+.fixreport-close-dialog { box-sizing: border-box; display: grid; flex: none; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid transparent; border-radius: 4px; background: transparent; color: #50575e; font-family: inherit; font-size: 25px; font-weight: 400; line-height: 1; cursor: pointer; appearance: none; }
+.fixreport-close-dialog:hover { background: #f0f0f1; color: #1d2327; }
+.fixreport-close-dialog:active { background: #dcdcde; color: #1d2327; }
+.fixreport-close-dialog:focus:not(:focus-visible) { outline: none; }
+.fixreport-inspection-body { flex: 1; min-height: 0; overflow-y: auto; padding: 20px 24px 28px; }
+.fixreport-inspection-primary { padding: 0 0 20px; border-bottom: 1px solid #dcdcde; }
+.fixreport-inspection-primary h3 { margin: 0 0 12px; font-size: 20px; line-height: 1.35; overflow-wrap: anywhere; }
+.fixreport-inspection-summary, .fixreport-inspection-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; color: #50575e; }
+.fixreport-inspection-tags { margin-top: 12px; }
+.fixreport-inspection-tags [data-record-status] { font-weight: 600; }
+.fixreport-inspection-primary [data-record-legacy] { display: block; margin-top: 10px; color: #646970; }
+.fixreport-inspection-primary [data-record-legacy][hidden] { display: none; }
+.fixreport-inspection-section { margin-top: 20px; padding: 16px; border: 1px solid #e2e4e7; border-radius: 4px; background: #f8f9f9; }
+.fixreport-inspection-section[hidden] { display: none; }
+.fixreport-inspection-section h4 { margin: 0 0 8px; font-size: 13px; }
+.fixreport-inspection-section p { margin: 0; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.fixreport-inspection-facts { display: grid; grid-template-columns: 140px 1fr; gap: 0; }
+.fixreport-inspection-facts { margin: 0; }
+.fixreport-inspection-facts dt, .fixreport-inspection-facts dd { margin: 0; padding: 9px 0; border-bottom: 1px solid #e2e4e7; overflow-wrap: anywhere; white-space: pre-wrap; }
+.fixreport-inspection-facts dt { font-weight: 600; color: #50575e; }
+.fixreport-inspection-facts dt:last-of-type, .fixreport-inspection-facts dd:last-of-type { border-bottom: 0; }
+.fixreport-add-panel form { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.fixreport-add-body { flex: 1; min-height: 0; overflow-y: auto; padding: 20px 24px; }
+.fixreport-form-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px 20px; }
+.fixreport-form-grid label { display: grid; align-content: start; gap: 6px; min-width: 0; }
+.fixreport-form-grid input:not([type=checkbox]), .fixreport-form-grid select, .fixreport-form-grid textarea { width: 100%; max-width: none; box-sizing: border-box; }
+.fixreport-form-grid input:not([type=checkbox]), .fixreport-form-grid select { min-height: 36px; }
+.fixreport-form-grid .fixreport-field-wide { grid-column: 1 / -1; }
+.fixreport-form-grid .fixreport-visibility { display: flex; align-items: center; gap: 8px; }
+.fixreport-form-grid .fixreport-visibility input { margin: 0; }
+.fixreport-visibility-group { padding: 12px 14px; border: 1px solid #e2e4e7; border-radius: 4px; background: #f8f9f9; }
+.fixreport-form-grid strong, .fixreport-form-grid small { display: block; }
+.fixreport-form-grid .fixreport-documented-by { align-self: center; }
+.fixreport-form-grid .fixreport-documented-by span { display: block; margin-bottom: 5px; color: #50575e; font-size: 12px; font-weight: 600; }
+.fixreport-form-grid .fixreport-documented-by small { color: #646970; }
+.fixreport-visibility-group .description { margin: 5px 0 0; margin-inline-start: 22px; color: #646970; }
+.fixreport-form-actions { display: flex; flex: none; justify-content: flex-end; flex-wrap: wrap; gap: 8px; padding: 14px 24px; border-top: 1px solid #dcdcde; background: #fff; }
+.fixreport-form-actions .button { min-height: 36px; }
+.fixreport-activities :is(button, a, input, select, textarea):focus-visible { outline: 2px solid #2271b1; outline-offset: 2px; }
+@media screen and (max-width: 1100px) { .fixreport-activity-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; } .fixreport-activity-overview > div:nth-child(2) { border: 0; } .fixreport-activity-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media screen and (max-width: 782px) { .fixreport-activity-overview { grid-template-columns: 1fr; } .fixreport-activity-overview > div { padding: 0 0 12px; border: 0; border-bottom: 1px solid #eee; } .fixreport-activity-overview > div:last-child { border: 0; } .fixreport-activity-filters { grid-template-columns: 1fr; } .fixreport-form-grid { grid-template-columns: 1fr; } .fixreport-form-grid .fixreport-field-wide { grid-column: auto; } .fixreport-inspection-facts { grid-template-columns: 1fr; } .fixreport-inspection-facts dt { border: 0; padding-bottom: 0; } }
+@media screen and (max-width: 480px) { .fixreport-activities { margin-inline-end: 10px; } .fixreport-add-panel { width: calc(100vw - 12px); max-height: calc(100dvh - 12px); } .fixreport-add-panel header, .fixreport-inspection-panel header { padding: 12px 16px; } .fixreport-add-body, .fixreport-inspection-body { padding: 16px; } .fixreport-form-actions { padding: 12px 16px; } }
+[dir="rtl"] .fixreport-dialog-backdrop:has(.fixreport-inspection-panel) { justify-content: flex-start; }

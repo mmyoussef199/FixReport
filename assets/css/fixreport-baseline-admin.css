@@ -1,0 +1,135 @@
+.fixreport-baseline { max-width: 1180px; }
+.fixreport-baseline section { margin: 1.6rem 0; }
+.fixreport-baseline section > h2 { margin-bottom: .7rem; }
+.fixreport-baseline-header { margin: 1.2rem 0; }
+.fixreport-baseline-header h2 { margin-bottom: .35rem; }
+.fixreport-baseline-header p { margin: .35rem 0; }
+.fixreport-baseline-meta { color: #50575e; }
+.fixreport-baseline-intro { max-width: 680px; background: #fff; border: 1px solid #c3c4c7; padding: 1.25rem 1.5rem; }
+.fixreport-baseline-intro h2 { margin-top: 0; }
+.fixreport-baseline-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.fixreport-baseline-card { background: #fff; border: 1px solid #c3c4c7; padding: 14px 16px; min-width: 0; }
+.fixreport-baseline-card h3 { margin: 0 0 .6rem; font-size: 13px; color: #50575e; }
+.fixreport-baseline-card p { margin: .35rem 0 0; }
+.fixreport-baseline-card-value { font-size: 23px; line-height: 1.3; font-weight: 600; overflow-wrap: anywhere; }
+.fixreport-baseline-facts { max-width: 900px; }
+.fixreport-baseline-facts th { width: 35%; font-weight: 600; }
+.fixreport-baseline-facts td, .fixreport-baseline-facts th { padding: 10px 12px; overflow-wrap: anywhere; }
+.fixreport-baseline-table-scroll { overflow-x: auto; max-width: 100%; }
+.fixreport-baseline-table-scroll table { min-width: 560px; }
+.fixreport-baseline-table-scroll td, .fixreport-baseline-table-scroll th { padding: 10px 12px; vertical-align: top; overflow-wrap: anywhere; }
+.fixreport-baseline-parent { display: block; color: #50575e; font-size: 12px; margin-top: 3px; }
+.fixreport-baseline-technical { margin: 2rem 0; max-width: 900px; }
+.fixreport-baseline-technical summary { cursor: pointer; font-weight: 600; padding: 8px 0; }
+.fixreport-baseline-technical table { margin-top: 8px; }
+@media (max-width: 600px) {
+  .fixreport-baseline-intro { padding: 1rem; }
+  .fixreport-baseline-overview { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .fixreport-baseline-facts tr { display: block; padding: 7px 10px; }
+  .fixreport-baseline-facts th, .fixreport-baseline-facts td { display: block; width: auto; padding: 3px 0; }
+  .fixreport-baseline-facts td { overflow-wrap: anywhere; }
+}
+
+/* Site Baseline route only. Snapshot detail, history, comparison and Checklist retain the rules above. */
+.fixreport-baseline--redesigned {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+  max-width: 1440px;
+  margin-inline-end: 20px;
+  color: #1d2327;
+}
+.fixreport-baseline--redesigned *,
+.fixreport-baseline--redesigned *::before,
+.fixreport-baseline--redesigned *::after { box-sizing: border-box; }
+.fixreport-baseline--redesigned > * { grid-column: 1 / -1; min-width: 0; }
+.fixreport-baseline--redesigned > h1 { margin: 22px 0 8px; padding: 0; font-size: 26px; line-height: 1.3; font-weight: 600; }
+.fixreport-baseline--redesigned > p { margin: 0 0 16px; }
+.fixreport-baseline--redesigned a:focus-visible,
+.fixreport-baseline--redesigned summary:focus-visible,
+.fixreport-baseline--redesigned button:focus-visible { outline: 2px solid #2271b1; outline-offset: 2px; }
+.fixreport-baseline--redesigned > .notice { margin: 0 0 18px; }
+.fixreport-baseline--redesigned .fixreport-baseline-header,
+.fixreport-baseline--redesigned > section:not([aria-labelledby="fixreport-baseline-overview"]),
+.fixreport-baseline--redesigned .fixreport-baseline-technical {
+  min-width: 0;
+  max-width: none;
+  margin: 0 0 20px;
+  padding: 20px 24px;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+}
+.fixreport-baseline--redesigned .fixreport-baseline-header { margin-top: 4px; }
+.fixreport-baseline--redesigned .fixreport-baseline-header h2 { margin: 0 0 7px; font-size: 19px; line-height: 1.4; }
+.fixreport-baseline--redesigned .fixreport-baseline-header p { line-height: 1.5; }
+.fixreport-baseline--redesigned .fixreport-baseline-meta { margin-top: 14px; padding-top: 14px; border-top: 1px solid #f0f0f1; overflow-wrap: anywhere; }
+.fixreport-baseline--redesigned > section > h2,
+.fixreport-baseline--redesigned .fixreport-baseline-intro h2 {
+  margin: 0 0 16px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid #f0f0f1;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-overview"] { margin: 4px 0 22px; }
+.fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-overview"] > h2 { margin-bottom: 12px; padding: 0; border: 0; }
+.fixreport-baseline--redesigned .fixreport-baseline-overview { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.fixreport-baseline--redesigned .fixreport-baseline-card { padding: 18px 20px; border-color: #dcdcde; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, .04); }
+.fixreport-baseline--redesigned .fixreport-baseline-card h3 { margin-bottom: 10px; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+.fixreport-baseline--redesigned .fixreport-baseline-card-value { font-size: 28px; }
+.fixreport-baseline--redesigned .fixreport-baseline-card p:last-child { color: #646970; line-height: 1.45; }
+.fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-site"],
+.fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-environment"],
+.fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-updates"],
+.fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-content"] { grid-column: auto; }
+.fixreport-baseline--redesigned .fixreport-baseline-facts { width: 100%; max-width: none; margin: 0; border: 0; box-shadow: none; }
+.fixreport-baseline--redesigned .fixreport-baseline-facts th { width: 42%; color: #50575e; }
+.fixreport-baseline--redesigned .fixreport-baseline-facts td,
+.fixreport-baseline--redesigned .fixreport-baseline-facts th { padding: 11px 10px; border-bottom: 1px solid #f0f0f1; line-height: 1.5; text-align: start; }
+.fixreport-baseline--redesigned .fixreport-baseline-facts tr:last-child td,
+.fixreport-baseline--redesigned .fixreport-baseline-facts tr:last-child th { border-bottom: 0; }
+.fixreport-baseline--redesigned .description { margin-bottom: 0; color: #646970; line-height: 1.5; }
+.fixreport-baseline--redesigned .fixreport-baseline-table-scroll { min-width: 0; max-width: 100%; overflow-x: auto; }
+.fixreport-baseline--redesigned .fixreport-baseline-table-scroll table { width: 100%; margin: 0; border: 0; box-shadow: none; }
+.fixreport-baseline--redesigned .fixreport-baseline-table-scroll th { background: #f6f7f7; color: #50575e; font-size: 12px; font-weight: 600; text-align: start; }
+.fixreport-baseline--redesigned .fixreport-baseline-table-scroll td { line-height: 1.5; }
+.fixreport-baseline--redesigned .frb-inventory-table { min-width: 0; table-layout: fixed; }
+.fixreport-baseline--redesigned .frb-inventory-table th:first-child,
+.fixreport-baseline--redesigned .frb-inventory-table td:first-child { width: 40%; }
+.fixreport-baseline--redesigned .frb-inventory-table tbody tr:hover td { background: #f6f7f7; }
+.fixreport-baseline--redesigned .fixreport-baseline-technical { max-width: none; }
+.fixreport-baseline--redesigned .fixreport-baseline-technical summary { padding: 0; font-size: 17px; line-height: 1.4; }
+.fixreport-baseline--redesigned .fixreport-baseline-technical[open] summary { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f1; }
+
+@media (max-width: 1100px) {
+  .fixreport-baseline--redesigned .fixreport-baseline-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-site"],
+  .fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-environment"],
+  .fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-updates"],
+  .fixreport-baseline--redesigned > section[aria-labelledby="fixreport-baseline-content"] { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  .fixreport-baseline--redesigned { grid-template-columns: minmax(0, 1fr); margin-inline-end: 10px; }
+  .fixreport-baseline--redesigned .fixreport-baseline-header,
+  .fixreport-baseline--redesigned > section:not([aria-labelledby="fixreport-baseline-overview"]),
+  .fixreport-baseline--redesigned .fixreport-baseline-technical { padding: 18px; }
+  .fixreport-baseline--redesigned .fixreport-baseline-facts tr { padding: 7px 0; }
+  .fixreport-baseline--redesigned .fixreport-baseline-facts th,
+  .fixreport-baseline--redesigned .fixreport-baseline-facts td { width: auto; border: 0; }
+  .fixreport-baseline--redesigned .frb-inventory-table,
+  .fixreport-baseline--redesigned .frb-inventory-table tbody,
+  .fixreport-baseline--redesigned .frb-inventory-table tr,
+  .fixreport-baseline--redesigned .frb-inventory-table td { display: block; width: 100%; }
+  .fixreport-baseline--redesigned .frb-inventory-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  .fixreport-baseline--redesigned .frb-inventory-table tr { padding: 10px 0; border-bottom: 1px solid #dcdcde; }
+  .fixreport-baseline--redesigned .frb-inventory-table tr:last-child { border-bottom: 0; }
+  .fixreport-baseline--redesigned .frb-inventory-table td { padding: 5px 0; border: 0; overflow-wrap: anywhere; }
+  .fixreport-baseline--redesigned .frb-inventory-table td:first-child { width: 100%; }
+  .fixreport-baseline--redesigned .frb-inventory-table td::before { display: block; margin-bottom: 2px; color: #646970; content: attr(data-label); font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+}
+@media (max-width: 420px) {
+  .fixreport-baseline--redesigned .fixreport-baseline-overview { grid-template-columns: minmax(0, 1fr); }
+}

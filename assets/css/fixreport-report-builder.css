@@ -1,0 +1,277 @@
+/* FixReport Guided Report Builder. Scoped to .fixreport-builder; logical properties for LTR/RTL. */
+.fixreport-builder {
+	--frb-ink: #1d2327;
+	--frb-muted: #50575e;
+	--frb-faint: #646970;
+	--frb-canvas: #f0f0f1;
+	--frb-card: #fff;
+	--frb-soft: #f6f7f7;
+	--frb-line: #dcdcde;
+	--frb-line-strong: #c3c4c7;
+	--frb-input-line: #8c8f94;
+	--frb-accent: #2271b1;
+	--frb-accent-deep: #135e96;
+	--frb-accent-soft: #f0f6fc;
+	--frb-draft-bg: #fcf9e8;
+	--frb-draft-line: #f0b849;
+	--frb-draft-ink: #8a6d3b;
+	--frb-error: #d63638;
+	--frb-radius: 4px;
+	--frb-focus: 0 0 0 1px #fff, 0 0 0 3px #2271b1;
+	color: var(--frb-ink);
+	max-width: 1440px;
+}
+.fixreport-builder *,
+.fixreport-builder *::before,
+.fixreport-builder *::after { box-sizing: border-box; }
+.fixreport-builder [hidden] { display: none !important; }
+.fixreport-builder .frb-ltr { direction: ltr; unicode-bidi: isolate; }
+body.rtl .fixreport-builder .frb-flip { transform: scaleX(-1); }
+
+/* Focus: one clear ring for every interactive control in the builder. */
+.fixreport-builder a:focus,
+.fixreport-builder button:focus,
+.fixreport-builder input:focus,
+.fixreport-builder select:focus,
+.fixreport-builder textarea:focus,
+.fixreport-builder [tabindex="-1"]:focus { outline: 2px solid transparent; box-shadow: var(--frb-focus); }
+.fixreport-builder [tabindex="-1"]:focus:not(:focus-visible) { box-shadow: none; }
+
+.fixreport-builder .frb-card {
+	background: var(--frb-card);
+	border: 1px solid var(--frb-line);
+	border-radius: var(--frb-radius);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Back link and header bar */
+.fixreport-builder .frb-back { margin: 8px 0 12px; }
+.fixreport-builder .frb-back a { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none; }
+.fixreport-builder .frb-header {
+	display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+	gap: 12px 16px; padding: 16px; margin-block-end: 20px;
+}
+.fixreport-builder .frb-header-title { display: flex; align-items: center; gap: 12px; flex: 1 1 360px; min-width: 0; }
+.fixreport-builder .frb-title-input {
+	flex: 1 1 auto; min-width: 0; font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.015em;
+	color: var(--frb-ink); background: transparent; border: 1px solid transparent; border-radius: var(--frb-radius);
+	padding: 2px 6px; margin-inline-start: -7px;
+}
+.fixreport-builder .frb-title-input:hover { border-color: var(--frb-line); }
+.fixreport-builder .frb-title-input:focus { background: var(--frb-soft); border-color: var(--frb-accent); }
+.fixreport-builder .frb-badge {
+	display: inline-flex; align-items: center; height: 20px; padding: 0 8px; border: 1px solid; border-radius: 3px;
+	font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+}
+.fixreport-builder .frb-badge-draft { background: var(--frb-draft-bg); border-color: var(--frb-draft-line); color: var(--frb-draft-ink); }
+.fixreport-builder .frb-header-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.fixreport-builder .frb-saved {
+	display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: var(--frb-radius);
+	background: var(--frb-soft); color: var(--frb-muted); font-size: 12px; font-weight: 600;
+}
+.fixreport-builder .frb-saved .dashicons { color: var(--frb-accent); font-size: 16px; width: 16px; height: 16px; }
+/*
+ * Icon buttons. ".wp-core-ui" raises specificity above core's ".wp-core-ui .button"
+ * (inline-block, 2.15 line-height), whose equal-specificity rules otherwise win or lose
+ * by stylesheet order and let a Dashicon break onto its own line.
+ */
+.wp-core-ui .fixreport-builder .button {
+	display: inline-flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center;
+	gap: 6px; min-height: 32px; padding: 0 12px; line-height: 1.4; white-space: nowrap; vertical-align: middle;
+}
+.wp-core-ui .fixreport-builder .button .dashicons {
+	display: inline-block; flex: 0 0 16px; width: 16px; height: 16px; margin: 0; padding: 0;
+	font-size: 16px; line-height: 16px; vertical-align: middle;
+}
+.wp-core-ui .fixreport-builder .button > span:not(.dashicons) { display: inline; line-height: inherit; }
+.wp-core-ui .fixreport-builder .button[disabled],
+.wp-core-ui .fixreport-builder .button[aria-disabled="true"] { cursor: not-allowed; }
+
+.fixreport-builder .frb-errors,
+.fixreport-builder .frb-unsaved { margin: 0 0 16px; }
+.fixreport-builder .frb-errors ul { margin: 4px 0 8px; padding-inline-start: 18px; list-style: disc; }
+
+/* Workspace grid */
+.fixreport-builder .frb-layout {
+	display: grid; grid-template-columns: minmax(220px, 3fr) minmax(0, 9fr); gap: 20px; align-items: start;
+}
+.fixreport-builder .frb-stepper { padding: 16px; position: sticky; top: 46px; }
+.fixreport-builder .frb-stepper-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fixreport-builder .frb-stepper h2 { margin: 0; font-size: 16px; line-height: 22px; }
+.fixreport-builder .frb-step-count { font-family: monospace; font-size: 12px; color: var(--frb-faint); }
+.fixreport-builder .frb-chip {
+	display: inline-block; margin: 6px 0 12px; padding: 2px 6px; border-radius: var(--frb-radius);
+	background: var(--frb-canvas); color: var(--frb-muted); font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+}
+.fixreport-builder .frb-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.fixreport-builder .frb-steps li { margin: 0; }
+.fixreport-builder .frb-step {
+	display: flex; align-items: flex-start; gap: 10px; width: 100%; padding: 8px; text-align: start;
+	background: transparent; border: 1px solid transparent; border-radius: var(--frb-radius); color: inherit; cursor: pointer;
+	font: inherit;
+}
+.fixreport-builder .frb-step:hover { background: var(--frb-soft); }
+.fixreport-builder .frb-step.is-active { background: var(--frb-canvas); border-color: var(--frb-line); }
+.fixreport-builder .frb-step-number {
+	display: inline-flex; align-items: center; justify-content: center; flex: 0 0 24px; width: 24px; height: 24px; margin-block-start: 1px;
+	border-radius: 9999px; background: #e2e2e3; color: var(--frb-muted); font-size: 11px; font-weight: 700;
+}
+.fixreport-builder .frb-step.is-active .frb-step-number { background: var(--frb-accent); color: #fff; }
+.fixreport-builder .frb-step-text { display: flex; flex-direction: column; min-width: 0; }
+.fixreport-builder .frb-step-name { font-size: 13px; font-weight: 600; line-height: 18px; }
+.fixreport-builder .frb-step:hover .frb-step-name { color: var(--frb-accent); }
+.fixreport-builder .frb-step-summary { font-size: 12px; line-height: 17px; color: var(--frb-faint); overflow-wrap: anywhere; }
+
+/* Panels */
+.fixreport-builder .frb-panels { min-width: 0; }
+.fixreport-builder .frb-panel { padding: 24px; }
+.fixreport-builder .frb-panel + .frb-panel { margin-block-start: 20px; }
+.fixreport-builder .frb-step-kicker {
+	margin: 0 0 4px; color: var(--frb-accent); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.fixreport-builder .frb-panel h2 { margin: 0; font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.015em; }
+.fixreport-builder .frb-lead { margin: 6px 0 20px; font-size: 14px; line-height: 20px; color: var(--frb-muted); max-width: 72ch; }
+.fixreport-builder .frb-group {
+	background: var(--frb-soft); border: 1px solid var(--frb-line); border-radius: var(--frb-radius);
+	padding: 16px; margin-block-end: 16px;
+}
+.fixreport-builder .frb-group h3 {
+	display: flex; align-items: center; gap: 6px; margin: 0 0 12px; font-size: 16px; line-height: 22px;
+}
+.fixreport-builder .frb-group h3 .dashicons { color: var(--frb-accent); }
+.fixreport-builder .frb-hint { margin: 4px 0 0; font-size: 12px; line-height: 17px; color: var(--frb-faint); }
+.fixreport-builder .frb-empty { margin: 0; color: var(--frb-muted); }
+.fixreport-builder .frb-count { font-size: 12px; font-weight: 600; color: var(--frb-faint); }
+.fixreport-builder .notice.inline { margin: 0 0 16px; }
+
+.fixreport-builder input[type="text"],
+.fixreport-builder input[type="url"],
+.fixreport-builder input[type="email"],
+.fixreport-builder input[type="number"],
+.fixreport-builder select,
+.fixreport-builder textarea { border: 1px solid var(--frb-input-line); border-radius: var(--frb-radius); background: #fff; }
+.fixreport-builder input[type="text"],
+.fixreport-builder input[type="url"],
+.fixreport-builder input[type="email"],
+.fixreport-builder select { min-height: 32px; }
+.fixreport-builder .frb-panel textarea { width: 100%; }
+.fixreport-builder input[aria-invalid="true"],
+.fixreport-builder textarea[aria-invalid="true"] { border-color: var(--frb-error); }
+
+/* Step 1 facts */
+.fixreport-builder .frb-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; margin: 0; }
+.fixreport-builder .frb-facts dt { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--frb-faint); }
+.fixreport-builder .frb-facts dd { margin: 2px 0 0; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.fixreport-builder .frb-focus-title { font-size: 14px; font-weight: 600; text-align: start; }
+
+/* Step 2 branding + cover */
+.fixreport-builder .frb-split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: start; }
+.fixreport-builder .frb-split-main { min-width: 0; }
+.fixreport-builder .frb-brand-field { border: 0; margin: 0 0 14px; padding: 0; min-width: 0; }
+.fixreport-builder .frb-brand-field:last-child { margin-block-end: 0; }
+.fixreport-builder .frb-brand-field legend { padding: 0; margin-block-end: 4px; font-size: 13px; font-weight: 600; }
+.fixreport-builder .frb-brand-row { display: grid; grid-template-columns: minmax(150px, 2fr) minmax(0, 3fr); gap: 8px; align-items: start; }
+.fixreport-builder .frb-brand-row .frb-brand-value { width: 100%; }
+.fixreport-builder .frb-logo-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 0; }
+.fixreport-builder .frb-logo-thumb {
+	display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; flex: 0 0 48px;
+	border: 1px solid var(--frb-line); border-radius: var(--frb-radius); background: #fff; overflow: hidden;
+}
+.fixreport-builder .frb-logo-thumb img { max-width: 100%; max-height: 100%; }
+.fixreport-builder .frb-remove { color: var(--frb-error); }
+.fixreport-builder .frb-locale { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.fixreport-builder .frb-choice {
+	display: flex; align-items: flex-start; gap: 8px; padding: 10px; background: #fff;
+	border: 1px solid var(--frb-line); border-radius: var(--frb-radius); cursor: pointer;
+}
+.fixreport-builder .frb-choice:hover { border-color: var(--frb-line-strong); }
+.fixreport-builder .frb-choice input { margin-block-start: 2px; }
+.fixreport-builder .frb-choice > span { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--frb-faint); }
+.fixreport-builder .frb-choice strong { font-size: 13px; color: var(--frb-ink); }
+
+.fixreport-builder .frb-split-side { position: sticky; top: 46px; min-width: 0; }
+.fixreport-builder .frb-cover-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-block-end: 8px; }
+.fixreport-builder .frb-cover-head h3 { display: flex; align-items: center; gap: 6px; margin: 0; font-size: 14px; }
+.fixreport-builder .frb-cover-head .dashicons { color: var(--frb-accent); }
+.fixreport-builder .frb-cover-frame { padding: 16px; background: #e8e8e9; border-radius: 8px; display: flex; justify-content: center; }
+.fixreport-builder .frb-cover {
+	display: flex; flex-direction: column; width: 100%; max-width: 370px; aspect-ratio: 1 / 1.414; padding: 24px;
+	background: #fff; border-radius: 2px; box-shadow: 0 4px 12px rgba(29, 35, 39, 0.15); overflow: hidden; font-size: 11px;
+	color: #243342; text-align: start;
+}
+.fixreport-builder .frb-cover-brand { display: flex; align-items: center; gap: 8px; padding-block-end: 10px; border-block-end: 1px solid #e8e8e9; }
+.fixreport-builder .frb-cover-logo { max-width: 72px; max-height: 40px; object-fit: contain; }
+.fixreport-builder .frb-cover-company { font-size: 13px; font-weight: 600; color: #153a58; overflow-wrap: anywhere; }
+.fixreport-builder .frb-cover-contact { display: flex; flex-direction: column; gap: 1px; margin-block-start: 6px; color: #526475; font-size: 10px; overflow-wrap: anywhere; white-space: pre-line; }
+.fixreport-builder .frb-cover-accent { width: 48px; height: 4px; margin: 18px 0 10px; border-radius: 9999px; background: var(--frb-accent); }
+.fixreport-builder .frb-cover-title { margin: 0 0 6px; font-size: 20px; line-height: 1.25; font-weight: 600; color: #153a58; overflow-wrap: anywhere; }
+.fixreport-builder .frb-cover-meta { margin: 0 0 4px; color: #526475; font-size: 10px; }
+.fixreport-builder .frb-cover-banner { margin: 8px 0; padding: 6px; background: #e8eef4; border: 1px solid #c2d0dc; font-size: 10px; font-weight: 600; }
+.fixreport-builder .frb-cover-footer { margin-block-start: auto; padding-block-start: 8px; border-block-start: 1px solid #e8e8e9; color: #526475; font-size: 9px; white-space: pre-line; overflow-wrap: anywhere; }
+.fixreport-builder .frb-cover-footer:empty { border: 0; }
+.fixreport-builder .frb-cover [data-cover]:empty { display: none; }
+
+/* Step 3 activities + report checklist */
+.fixreport-builder .frb-activity-list { margin: 0; padding: 0; list-style: none; max-height: 480px; overflow: auto; border: 1px solid var(--frb-line); border-radius: var(--frb-radius); background: #fff; }
+.fixreport-builder .frb-activity-list li { margin: 0; border-block-end: 1px solid #f0f0f1; }
+.fixreport-builder .frb-activity-list li:last-child { border-block-end: 0; }
+.fixreport-builder .frb-activity { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; cursor: pointer; }
+.fixreport-builder .frb-activity input { margin-block-start: 2px; }
+.fixreport-builder .frb-activity-body { display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
+.fixreport-builder .frb-gate { margin: 8px 0 12px; font-weight: 600; }
+.fixreport-builder .frb-gate.is-blocked { color: #8a2424; }
+.fixreport-builder .frb-gate.is-ready { color: #0a4b16; }
+.fixreport-builder .frb-check { margin: 0 0 10px; padding: 12px; background: #fff; border: 1px solid var(--frb-line); border-radius: var(--frb-radius); min-width: 0; }
+.fixreport-builder .frb-check legend { padding: 0 4px; font-weight: 600; }
+.fixreport-builder .frb-check-row { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 3fr); gap: 10px; margin-block-start: 8px; }
+.fixreport-builder .frb-check-row label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; }
+
+/* Steps 4-5 fields */
+.fixreport-builder .frb-field > label,
+.fixreport-builder label.frb-field { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; }
+.fixreport-builder .frb-snapshots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.fixreport-builder .frb-snapshots select { width: 100%; max-width: none; }
+.fixreport-builder .frb-inline-check { font-weight: 600; }
+
+/* Step 6 */
+.fixreport-builder .frb-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.fixreport-builder .frb-document { border: 1px solid var(--frb-line); border-radius: var(--frb-radius); padding: 20px; background: #fff; overflow-x: auto; }
+.fixreport-builder .frb-document .widefat { max-width: 100%; }
+
+/* Sticky bottom toolbar */
+.fixreport-builder .frb-toolbar {
+	position: sticky; bottom: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+	gap: 12px; margin-block-start: 24px; padding: 12px 16px; box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.06);
+}
+.fixreport-builder .frb-toolbar .frb-next { margin-inline-start: auto; }
+.fixreport-builder .frb-toolbar .frb-prev + .frb-preview-link,
+.fixreport-builder .frb-toolbar .frb-preview-link:first-child { margin-inline: auto; }
+.fixreport-builder .frb-hidden-form { display: none; }
+
+/* Without JavaScript every panel stays visible and in order. */
+.fixreport-builder:not(.is-enhanced) .frb-stepper { position: static; }
+
+@media (max-width: 1280px) {
+	.fixreport-builder .frb-split { grid-template-columns: minmax(0, 1fr); }
+	.fixreport-builder .frb-split-side { position: static; }
+}
+@media (max-width: 960px) {
+	.fixreport-builder .frb-layout { grid-template-columns: minmax(0, 1fr); }
+	.fixreport-builder .frb-stepper { position: static; }
+	.fixreport-builder .frb-steps { flex-direction: row; overflow-x: auto; padding-block-end: 4px; }
+	.fixreport-builder .frb-steps li { flex: 0 0 auto; }
+	.fixreport-builder .frb-step { width: auto; max-width: 220px; }
+}
+@media (max-width: 782px) {
+	.fixreport-builder .frb-panel { padding: 16px; }
+	.fixreport-builder .frb-title-input { font-size: 20px; line-height: 28px; }
+	.fixreport-builder .frb-brand-row,
+	.fixreport-builder .frb-check-row,
+	.fixreport-builder .frb-snapshots,
+	.fixreport-builder .frb-locale { grid-template-columns: minmax(0, 1fr); }
+	.fixreport-builder .frb-step-summary { display: none; }
+	.fixreport-builder .frb-toolbar { justify-content: stretch; }
+	.wp-core-ui .fixreport-builder .frb-toolbar .button { flex: 1 1 100%; justify-content: center; }
+	.fixreport-builder .frb-toolbar .frb-next,
+	.fixreport-builder .frb-toolbar .frb-preview-link { margin-inline: 0; }
+}

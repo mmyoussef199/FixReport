@@ -1,0 +1,75 @@
+/* FixReport PDF Report Styles */
+body {
+    font-family: DejaVu Sans, sans-serif;
+    font-size: 9pt;
+    color: #333333;
+    line-height: 1.4;
+}
+@page {
+    margin: 25mm 15mm 20mm 15mm;
+}
+.header, .footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.header {
+    top: -20mm;
+    border-bottom: 1px solid #555555;
+    padding-bottom: 5px;
+    font-size: 9pt;
+}
+.footer {
+    bottom: -15mm;
+    font-size: 8pt;
+    color: #777777;
+    border-top: 1px solid #dddddd;
+    padding-top: 5px;
+}
+h1.report-main-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 16pt;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.report-meta {
+    text-align: center;
+    font-size: 8pt;
+    color: #555555;
+    margin-bottom: 15px;
+}
+.report-meta p {
+    margin: 2px 0;
+}
+table.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.logs-table th, .logs-table td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    text-align: left;
+    vertical-align: top; 
+}
+.logs-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    font-size: 8.5pt;
+}
+.logs-table td {
+    font-size: 8pt;
+}
+.log-description-cell {
+    word-wrap: break-word;
+}
+.no-logs {
+    text-align: center;
+    font-style: italic;
+    color: #777777;
+    padding: 20px;
+    border: 1px dashed #cccccc;
+}

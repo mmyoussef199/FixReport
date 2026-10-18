@@ -1,0 +1,172 @@
+/* FixReport All Reports. Scoped to .fixreport-reports; logical properties for LTR/RTL. */
+.fixreport-reports {
+	--frl-ink: #1d2327;
+	--frl-muted: #50575e;
+	--frl-faint: #646970;
+	--frl-canvas: #f0f0f1;
+	--frl-soft: #f6f7f7;
+	--frl-line: #dcdcde;
+	--frl-accent: #2271b1;
+	--frl-accent-dark: #135e96;
+	--frl-radius: 4px;
+	--frl-focus: 0 0 0 1px #fff, 0 0 0 3px #2271b1;
+	color: var(--frl-ink);
+	max-width: 1320px;
+}
+.fixreport-reports *,
+.fixreport-reports *::before,
+.fixreport-reports *::after { box-sizing: border-box; }
+body.rtl .fixreport-reports .frl-flip { transform: scaleX(-1); }
+.fixreport-reports a:focus,
+.fixreport-reports button:focus,
+.fixreport-reports input:focus,
+.fixreport-reports select:focus,
+.fixreport-reports .frl-create:focus { outline: 2px solid transparent; box-shadow: var(--frl-focus); }
+
+/* Buttons: icon alignment consistent with the Report Builder and viewer. */
+.wp-core-ui .fixreport-reports .button {
+	display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+	min-height: 30px; padding: 0 12px; line-height: 1.4; white-space: nowrap; vertical-align: middle;
+}
+.wp-core-ui .fixreport-reports .button .dashicons {
+	display: inline-block; flex: 0 0 16px; width: 16px; height: 16px; margin: 0; padding: 0; font-size: 16px; line-height: 16px;
+}
+
+/* Header */
+.fixreport-reports .frl-back { margin: 8px 0 12px; }
+.fixreport-reports .frl-back a { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none; }
+.fixreport-reports .frl-head {
+	display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px;
+	padding-block-end: 20px; border-block-end: 1px solid var(--frl-line);
+}
+.fixreport-reports .frl-head-main { min-width: 0; flex: 1 1 360px; }
+.fixreport-reports .frl-head h1 { margin: 0; padding: 0; font-size: 26px; line-height: 34px; font-weight: 600; letter-spacing: -0.015em; }
+.fixreport-reports .frl-lead { margin: 4px 0 0; color: var(--frl-muted); font-size: 13px; }
+.wp-core-ui .fixreport-reports .frl-head .button { min-height: 36px; padding: 0 14px; font-size: 14px; }
+.fixreport-reports .wp-header-end { margin: 0; }
+
+/* Summary cards */
+.fixreport-reports .frl-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0; padding: 0; list-style: none; }
+.fixreport-reports .frl-stat {
+	margin: 0; padding: 16px 20px; background: #fff; border: 1px solid var(--frl-line); border-radius: var(--frl-radius);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+.fixreport-reports .frl-stat-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--frl-muted); }
+.fixreport-reports .frl-stat-row { display: flex; align-items: baseline; gap: 8px; margin-block-start: 8px; }
+.fixreport-reports .frl-stat-value { font-size: 32px; line-height: 40px; font-weight: 700; letter-spacing: -0.02em; }
+.fixreport-reports .frl-stat-note { color: var(--frl-muted); font-size: 13px; }
+.fixreport-reports .frl-stat-draft .frl-stat-value { color: #8a6d3b; }
+.fixreport-reports .frl-stat-final .frl-stat-value { color: #0a4b16; }
+
+/* Table panel */
+.fixreport-reports .frl-panel { background: #fff; border: 1px solid var(--frl-line); border-radius: var(--frl-radius); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); }
+.fixreport-reports .frl-panel-bar {
+	display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px;
+	padding: 12px 16px; border-block-end: 1px solid var(--frl-line);
+}
+.fixreport-reports .frl-panel-bar h2 { margin: 0; font-size: 15px; line-height: 22px; }
+.fixreport-reports .frl-count { margin: 0; color: var(--frl-muted); font-size: 13px; }
+.fixreport-reports .frl-table-wrap { overflow-x: auto; }
+.fixreport-reports .frl-table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 19px; }
+.fixreport-reports .frl-table th {
+	padding: 10px 16px; background: var(--frl-soft); border-block-end: 1px solid var(--frl-line);
+	font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--frl-muted); text-align: start; white-space: nowrap;
+}
+.fixreport-reports .frl-table td { padding: 12px 16px; border-block-end: 1px solid var(--frl-canvas); vertical-align: middle; color: var(--frl-muted); }
+.fixreport-reports .frl-table tbody tr:last-child td { border-block-end: 0; }
+.fixreport-reports .frl-table tbody tr:hover td { background: #fafafa; }
+.fixreport-reports .frl-table .frl-col-actions { text-align: end; }
+.fixreport-reports .frl-title { min-width: 220px; }
+.fixreport-reports .frl-title .dashicons { color: #8c8f94; margin-inline-end: 8px; vertical-align: middle; }
+.fixreport-reports .frl-title-text { display: inline-block; vertical-align: middle; max-width: calc(100% - 32px); }
+.fixreport-reports .frl-title a { font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+.fixreport-reports .frl-title a:hover { color: var(--frl-accent-dark); text-decoration: underline; }
+.fixreport-reports .is-finalized .frl-title a { color: var(--frl-ink); }
+.fixreport-reports .frl-id { display: block; color: var(--frl-faint); font-size: 12px; font-family: monospace; direction: ltr; unicode-bidi: isolate; }
+.fixreport-reports .frl-sub { display: block; color: var(--frl-faint); font-size: 12px; direction: ltr; unicode-bidi: isolate; }
+.fixreport-reports .frl-muted { color: var(--frl-faint); }
+.fixreport-reports .frl-empty { padding: 32px 16px !important; text-align: center; color: var(--frl-faint); }
+
+/* Badges */
+.fixreport-reports .frl-type,
+.fixreport-reports .frl-status {
+	display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border: 1px solid; border-radius: 3px;
+	font-size: 11px; font-weight: 600; white-space: nowrap;
+}
+.fixreport-reports .frl-type { background: var(--frl-canvas); border-color: var(--frl-line); color: #2c3338; font-weight: 500; }
+.fixreport-reports .frl-type-initial_assessment { background: #f0f4f8; border-color: #d0e0ec; color: #1d3557; }
+.fixreport-reports .frl-status { letter-spacing: 0.04em; text-transform: uppercase; }
+.fixreport-reports .frl-status-draft { background: #fcf9e8; border-color: #f0b849; color: #8a6d3b; }
+.fixreport-reports .frl-status-finalized { background: #edfaef; border-color: #008a20; color: #0a4b16; }
+
+/* Row actions */
+.fixreport-reports .frl-actions { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 12px; }
+.fixreport-reports .frl-actions form { margin: 0; }
+.fixreport-reports .frl-link { font-weight: 600; text-decoration: none; white-space: nowrap; }
+.fixreport-reports .frl-link:hover { color: var(--frl-accent-dark); text-decoration: underline; }
+
+/* Pagination (server-side, 20 per page) */
+.fixreport-reports .frl-pager {
+	display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px;
+	padding: 10px 16px; border-block-start: 1px solid var(--frl-line); color: var(--frl-muted);
+}
+.fixreport-reports .frl-pager-info { margin: 0; font-size: 13px; }
+.fixreport-reports .frl-pager-links { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+.wp-core-ui .fixreport-reports .frl-pager .button.disabled { pointer-events: none; }
+.fixreport-reports .frl-empty a { margin-inline-start: 6px; font-weight: 600; }
+
+/* Create form (existing create route) */
+.fixreport-reports .frl-create {
+	margin-block-start: 24px; padding: 16px 20px; background: #fff; border: 1px solid var(--frl-line); border-radius: var(--frl-radius);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); scroll-margin-top: 48px;
+}
+.fixreport-reports .frl-create:target { border-color: var(--frl-accent); }
+.fixreport-reports .frl-create h2 {
+	display: flex; align-items: center; gap: 6px; margin: 0 0 6px; font-size: 15px; line-height: 22px;
+}
+.fixreport-reports .frl-create h2 .dashicons { color: var(--frl-accent); }
+.fixreport-reports .frl-create-lead { margin: 0 0 12px; color: var(--frl-muted); font-size: 13px; }
+.fixreport-reports .frl-fields { display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 12px 16px; }
+.fixreport-reports .frl-field { margin: 0; }
+.fixreport-reports .frl-field label { display: block; margin-block-end: 4px; font-size: 12px; font-weight: 600; color: var(--frl-muted); }
+.fixreport-reports .frl-field input,
+.fixreport-reports .frl-field select { width: 100%; max-width: none; min-height: 32px; }
+.fixreport-reports .frl-submit { margin: 12px 0 0; }
+
+/* Compliance note */
+.fixreport-reports .frl-note {
+	display: flex; align-items: flex-start; gap: 10px; margin-block-start: 24px; padding: 10px 14px;
+	background: var(--frl-soft); border: 1px solid var(--frl-line); border-radius: var(--frl-radius);
+}
+.fixreport-reports .frl-note .dashicons { color: var(--frl-faint); flex: 0 0 20px; }
+.fixreport-reports .frl-note p { margin: 0; font-size: 13px; line-height: 19px; color: var(--frl-muted); }
+.fixreport-reports .frl-note strong { color: var(--frl-ink); }
+
+@media (max-width: 960px) {
+	.fixreport-reports .frl-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.fixreport-reports .frl-field-wide { grid-column: 1 / -1; }
+}
+@media (max-width: 782px) {
+	.fixreport-reports .frl-stats { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+	.fixreport-reports .frl-head .button,
+	.wp-core-ui .fixreport-reports .frl-head .button { width: 100%; }
+	.fixreport-reports .frl-fields { grid-template-columns: minmax(0, 1fr); }
+	/* Stacked rows: each cell shows its column name. */
+	.fixreport-reports .frl-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+	.fixreport-reports .frl-table,
+	.fixreport-reports .frl-table tbody,
+	.fixreport-reports .frl-table tr,
+	.fixreport-reports .frl-table td { display: block; width: 100%; }
+	.fixreport-reports .frl-table tr { padding: 8px 0; border-block-end: 1px solid var(--frl-line); }
+	.fixreport-reports .frl-table td { padding: 6px 16px; border: 0; text-align: start; }
+	.fixreport-reports .frl-table td[data-colname]::before {
+		content: attr(data-colname); display: block; margin-block-end: 2px;
+		font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--frl-faint);
+	}
+	.fixreport-reports .frl-table .frl-title::before { display: none; }
+	.fixreport-reports .frl-table .frl-col-actions { text-align: start; }
+	.fixreport-reports .frl-actions { justify-content: flex-start; }
+	.fixreport-reports .frl-empty::before { display: none; }
+	.fixreport-reports .frl-pager-links { width: 100%; }
+	.wp-core-ui .fixreport-reports .frl-pager-links .button { flex: 1 1 0; }
+}

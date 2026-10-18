@@ -1,0 +1,129 @@
+/* FixReport Report Preview & Finalized View. Scoped to .fixreport-viewer; logical properties for LTR/RTL. */
+.fixreport-viewer {
+	--frv-ink: #1d2327;
+	--frv-muted: #50575e;
+	--frv-faint: #646970;
+	--frv-canvas: #f0f0f1;
+	--frv-soft: #f6f7f7;
+	--frv-line: #dcdcde;
+	--frv-accent: #2271b1;
+	--frv-radius: 4px;
+	--frv-focus: 0 0 0 1px #fff, 0 0 0 3px #2271b1;
+	color: var(--frv-ink);
+	max-width: 1440px;
+}
+.fixreport-viewer *,
+.fixreport-viewer *::before,
+.fixreport-viewer *::after { box-sizing: border-box; }
+body.rtl .fixreport-viewer .frv-flip { transform: scaleX(-1); }
+.fixreport-viewer a:focus,
+.fixreport-viewer button:focus { outline: 2px solid transparent; box-shadow: var(--frv-focus); }
+
+/* Buttons: same icon alignment rules as the Report Builder. */
+.wp-core-ui .fixreport-viewer .button {
+	display: inline-flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center;
+	gap: 6px; min-height: 32px; padding: 0 12px; line-height: 1.4; white-space: nowrap; vertical-align: middle;
+}
+.wp-core-ui .fixreport-viewer .button .dashicons {
+	display: inline-block; flex: 0 0 16px; width: 16px; height: 16px; margin: 0; padding: 0;
+	font-size: 16px; line-height: 16px; vertical-align: middle;
+}
+.wp-core-ui .fixreport-viewer .button[disabled] { cursor: not-allowed; }
+
+/* Header */
+.fixreport-viewer .frv-back { margin: 8px 0 8px; }
+.fixreport-viewer .frv-back a { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; text-decoration: none; }
+.fixreport-viewer .frv-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-block-end: 16px; }
+.fixreport-viewer .frv-head-main { min-width: 0; flex: 1 1 420px; }
+.fixreport-viewer .frv-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.fixreport-viewer .frv-title-row h1 {
+	margin: 0; padding: 0; font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.02em; overflow-wrap: anywhere;
+}
+.fixreport-viewer .frv-badge {
+	display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 10px; border: 1px solid; border-radius: 9999px;
+	font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+}
+.fixreport-viewer .frv-badge .dashicons { font-size: 14px; width: 14px; height: 14px; }
+.fixreport-viewer .frv-badge-draft { background: #fcf9e8; border-color: #f0b849; color: #8a6d3b; }
+.fixreport-viewer .frv-badge-final { background: #edfaef; border-color: #008a20; color: #0a4b16; }
+.fixreport-viewer .frv-meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 6px 0 0; color: var(--frv-muted); font-size: 13px; }
+.fixreport-viewer .frv-meta strong { color: var(--frv-ink); }
+.fixreport-viewer .frv-code { font-family: monospace; direction: ltr; unicode-bidi: isolate; }
+.fixreport-viewer .frv-head-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.fixreport-viewer .frv-head-actions form { margin: 0; }
+
+/* Banners */
+.fixreport-viewer .frv-banner { margin: 0 0 16px; }
+.fixreport-viewer .frv-banner-draft,
+.fixreport-viewer .frv-banner-final {
+	display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border: 1px solid; border-inline-start-width: 4px; border-radius: var(--frv-radius);
+}
+.fixreport-viewer .frv-banner-draft { background: #fcf9e8; border-color: #f0b849; }
+.fixreport-viewer .frv-banner-final { background: #fff; border-color: var(--frv-line); border-inline-start-color: #008a20; }
+.fixreport-viewer .frv-banner-draft .dashicons { color: #8a6d3b; }
+.fixreport-viewer .frv-banner-final .dashicons { color: #008a20; }
+.fixreport-viewer .frv-banner p { margin: 0; font-size: 13px; line-height: 19px; }
+
+/* Workspace: document + compact sidebar */
+.fixreport-viewer .frv-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 340px); gap: 20px; align-items: start; }
+.fixreport-viewer .frv-main { min-width: 0; }
+.fixreport-viewer .frv-card {
+	background: #fff; border: 1px solid var(--frv-line); border-radius: var(--frv-radius);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); padding: 16px;
+}
+.fixreport-viewer .frv-card + .frv-card { margin-block-start: 16px; }
+.fixreport-viewer .frv-card h2 {
+	display: flex; align-items: center; gap: 6px; margin: 0 0 12px; padding-block-end: 10px;
+	border-block-end: 1px solid var(--frv-canvas); font-size: 15px; line-height: 22px;
+}
+.fixreport-viewer .frv-card h2 .dashicons { color: var(--frv-accent); }
+.fixreport-viewer .frv-card p { margin: 0 0 10px; font-size: 13px; line-height: 19px; color: var(--frv-muted); }
+.fixreport-viewer .frv-doc-bar {
+	display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-block-end: 12px; padding: 8px 12px;
+	background: #fff; border: 1px solid var(--frv-line); border-radius: var(--frv-radius); font-weight: 600;
+}
+.fixreport-viewer .frv-doc-bar > span { display: inline-flex; align-items: center; gap: 6px; }
+.fixreport-viewer .frv-doc-bar .dashicons { color: var(--frv-accent); }
+.fixreport-viewer .frv-paper {
+	background: #fff; border: 1px solid var(--frv-line); border-radius: 2px; box-shadow: 0 4px 12px rgba(29, 35, 39, 0.1);
+	padding: 40px 48px; overflow-x: auto;
+}
+.fixreport-viewer .frv-paper .fixreport-report-document { max-width: 860px; margin-inline: auto; }
+.fixreport-viewer .frv-paper .widefat { max-width: 100%; }
+.fixreport-viewer .frv-empty p { margin: 0; }
+
+/* Sidebar details */
+.fixreport-viewer .frv-side { min-width: 0; position: sticky; top: 46px; }
+.fixreport-viewer .frv-facts { margin: 0; display: grid; gap: 10px; }
+.fixreport-viewer .frv-facts dt { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--frv-faint); }
+.fixreport-viewer .frv-facts dd { margin: 2px 0 0; font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+.fixreport-viewer.is-finalized .frv-status { color: #0a4b16; }
+.fixreport-viewer.is-draft .frv-status { color: #8a6d3b; }
+.fixreport-viewer .frv-evidence { margin: 0 0 10px; padding: 0; list-style: none; display: grid; gap: 6px; }
+.fixreport-viewer .frv-evidence li {
+	display: flex; justify-content: space-between; gap: 12px; margin: 0; padding: 6px 8px; background: var(--frv-soft);
+	border-radius: var(--frv-radius); font-size: 13px;
+}
+.fixreport-viewer .frv-evidence li strong { text-align: end; overflow-wrap: anywhere; }
+.fixreport-viewer .frv-evidence .frv-evidence-sub { background: transparent; padding-block: 0; color: var(--frv-faint); font-size: 12px; }
+.fixreport-viewer .frv-hint { font-size: 12px; line-height: 17px; color: var(--frv-faint); }
+.fixreport-viewer .frv-label { margin: 0 0 4px !important; font-size: 11px !important; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--frv-faint) !important; }
+.fixreport-viewer .frv-hash {
+	display: block; margin: 0 0 12px; padding: 6px 8px; background: var(--frv-soft); border-radius: var(--frv-radius);
+	font-size: 11px; line-height: 16px; word-break: break-all; text-align: left;
+}
+.fixreport-viewer .frv-lock { display: flex; align-items: flex-start; gap: 6px; padding: 8px; background: var(--frv-soft); border-radius: var(--frv-radius); color: var(--frv-ink) !important; margin: 0 !important; }
+.fixreport-viewer .frv-lock .dashicons { color: var(--frv-accent); flex: 0 0 20px; }
+
+@media (max-width: 1100px) {
+	.fixreport-viewer .frv-layout { grid-template-columns: minmax(0, 1fr); }
+	.fixreport-viewer .frv-side { position: static; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+	.fixreport-viewer .frv-card + .frv-card { margin-block-start: 0; }
+}
+@media (max-width: 782px) {
+	.fixreport-viewer .frv-title-row h1 { font-size: 22px; line-height: 30px; }
+	.fixreport-viewer .frv-paper { padding: 20px 16px; }
+	.fixreport-viewer .frv-head-actions,
+	.fixreport-viewer .frv-head-actions form { width: 100%; }
+	.wp-core-ui .fixreport-viewer .frv-head-actions .button { width: 100%; }
+}

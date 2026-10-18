@@ -2,19 +2,21 @@
 
 **WordPress Maintenance History & Client Reporting**
 
-FixReport is a free WordPress plugin in active development, designed to help website professionals document maintenance work, preserve a meaningful history of site changes, and produce clear, client-ready maintenance reports.
+FixReport is a free, actively developed WordPress plugin designed to help website professionals document maintenance work, preserve a meaningful history of site changes, and produce clear, client-ready maintenance reports.
 
-> **Project status:** Active development. This repository currently serves as the project's public introduction. The plugin source code, installation instructions, and downloadable releases will be published after the appropriate review and release checks. It is **not yet a public installation release**.
+> **Project status:** Public release — Version 1.3.1. FixReport is published on the official WordPress.org Plugin Directory, and its released source code is available in this repository. Development and improvements are ongoing.
+
+**[View FixReport on WordPress.org](https://wordpress.org/plugins/fixreport-maintenance-logger/)**
 
 ## Why FixReport?
 
 WordPress maintenance involves much more than updating plugins or ticking off a checklist. For developers and maintenance providers, the real challenge is maintaining a trustworthy record of **what was done, when it happened, what the site's condition was, and what can responsibly be communicated to a client**.
 
-FixReport is being built around a simple idea:
+FixReport is built around a simple idea:
 
 **A website should have a maintenance memory—not just a collection of one-off reports.**
 
-## What FixReport is designed to do
+## Key Features
 
 - **Maintenance activities:** Record and organize maintenance work in a structured timeline.
 - **Operational checklist:** Manage recurring site-maintenance tasks with categories, completion history, and accountable status changes.
@@ -23,7 +25,7 @@ FixReport is being built around a simple idea:
 - **Historical integrity:** Keep finalized reports stable, so later site changes do not silently rewrite what was previously reported.
 - **Evidence-aware communication:** Distinguish recorded information from actions marked complete manually; a checklist completion is not presented as independent technical verification.
 
-The project emphasizes useful records, understandable workflows, and responsible reporting rather than inflated claims or unnecessary complexity.
+FixReport emphasizes useful records, understandable workflows, and responsible reporting rather than inflated claims or unnecessary complexity.
 
 ## Who is it for?
 
@@ -34,7 +36,7 @@ FixReport is intended for:
 - Agencies managing client WordPress sites
 - Technical teams that need a consistent record of maintenance work
 
-## Product principles
+## Product Principles
 
 **History before presentation.** Reports should be grounded in the maintenance record.
 
@@ -46,23 +48,27 @@ FixReport is intended for:
 
 **Native WordPress experience.** The plugin is designed for workflows familiar to WordPress administrators.
 
-## Development and availability
+## Installation and Availability
 
-FixReport is under active development. Its features, interfaces, and implementation details may change before a public release.
+FixReport is published in the official WordPress.org Plugin Directory:
 
-This repository is being prepared as the canonical public home for the project. **No production-ready download or installation procedure is available here yet.**
+**[FixReport – Maintenance Logger](https://wordpress.org/plugins/fixreport-maintenance-logger/)**
 
-Documentation, source code, testing information, and release notes will be added as they are approved for publication.
+To install FixReport, open your WordPress dashboard, navigate to **Plugins → Add New Plugin**, search for **FixReport – Maintenance Logger**, and follow the installation instructions.
 
-## About the developer
+The latest published source version in this repository is **1.3.1**. Availability through WordPress.org's installation and update systems is subject to its release review and distribution process.
 
-FixReport is an independently developed WordPress product by **Mohamed Youssef**, drawing on extensive hands-on experience in WordPress development, site maintenance, hosting, troubleshooting, integrations, and client delivery.
+This GitHub repository provides the publicly released plugin source code. Further improvements, documentation, and future versions will be added as development continues.
+
+## About the Developer
+
+FixReport is an independently developed WordPress product by **Mohamed Youssef**, drawing on over 25 years of practical technology experience, including WordPress development, site maintenance, hosting, troubleshooting, integrations, and client delivery.
 
 The project reflects a practical focus: building tools that solve recurring problems encountered in real WordPress maintenance work.
 
 **LinkedIn:** [Mohamed Youssef](https://www.linkedin.com/in/mohamed-youssef-7448306a/)
 
-## Project updates
+## Project Updates
 
 Follow this repository for future development milestones, technical documentation, and release announcements.
 
